@@ -1,0 +1,195 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta http-equiv="Content-Language" content="zh-CN" />
+<meta content="all" name="robots" />
+<meta name="author" content="" /> 
+<meta name="Copyright" content="" />
+<meta name="keywords" content="" />
+<meta name="description" content="" /> 
+<link rel="icon" href="/favicon.ico" type="image/x-icon" />
+<title>列表页</title>
+<link rel="stylesheet" type="text/css" href="themes/default/easyui.css">
+<link rel="stylesheet" type="text/css" href="themes/icon.css">
+<link type="text/css" rel="stylesheet" media="all" href="css/style.css" />
+<script type="text/javascript" src="js/jquery-1.8.0.min.js"></script>
+<script type="text/javascript" src="js/jquery.easyui.min.js"></script>
+<script type="text/javascript" src="js/jquery.easyui.ext.js"></script>
+<script type="text/javascript" src="js/easyui-lang-zh_CN.js"></script>
+<script type="text/javascript" src="js/func.js"></script>
+</head>
+<body class="easyui-layout">
+
+<div id="searchbar" data-options="region:'north'" style="height:70px;" border="false">
+	<!-- 搜索栏 -->
+		<div id="searchbox" class="head-seachbox">
+			<h2 class="h2-title">搜索栏 <span class="s-poar"><a class="a-back" href="#">返回</a><a class="a-extend" href="#">收起</a></span></h2>
+			<div class="w-p99 marauto searchCont">
+			<form class="form-search" action="doForm" method="post" name="form_search">
+				<div class="fluidbox"><!-- 不分隔 -->
+					日期: <input class="easyui-datebox" name="startDate" style="width:100px"> - <input class="easyui-datebox" name="endDate" style="width:100px">
+					语言: <select class="easyui-combobox" name="language" panelHeight="auto" style="width:100px">
+						<option value="java">Java</option>
+						<option value="c">C</option>
+						<option value="basic">Basic</option>
+						<option value="perl">Perl</option>
+						<option value="python">Python</option>
+					</select>
+					<input type="text" class="txt" name="q" />
+					<a href="#" class="easyui-linkbutton a-searchSubimt" iconCls="icon-search">Search</a>
+				</div>
+			</form>
+		</div>
+	</div>
+</div>
+
+<div id="mainbox" data-options="region:'center'" border="false">
+	<!-- 数据grid表格 -->
+	<table id="dataGrid-a" class="easyui-datagrid" data-options="rownumbers:true,singleSelect:true,autoRowHeight:false,collapsible: true,pagination:true,toolbar:'#gridTools',data:tempData" fit="true">
+		<thead>
+			<tr>
+				<th data-options="field:'code',width:80">序号</th>
+				<th data-options="field:'name',width:100">名称</th>
+				<th data-options="field:'addr',width:80,align:'right'">地址</th>
+				<th data-options="field:'col4',width:80,align:'right'">第四列</th>
+			</tr>
+		</thead>
+	</table>
+
+	<!-- 数据grid工具栏 -->
+	<div id="gridTools">
+		<a id="a-gridAdd" href="javascript:void(0)" class="easyui-linkbutton" iconCls="icon-add" plain="true" onclick="girdAdd();">添加</a>
+		<a id="a-gridEdit" href="javascript:void(0)" class="easyui-linkbutton" iconCls="icon-edit" plain="true" onclick="girdEdit();">编辑</a>
+		<a id="a-gridQuickEdit" href="javascript:void(0)" class="easyui-linkbutton" iconCls="icon-quickEdit" plain="true" onclick="girdQuickEdit();">快速编辑</a>
+		<a id="a-gridRemove" href="javascript:void(0)" class="easyui-linkbutton" iconCls="icon-remove" plain="true" onclick="girdRemove();">删除</a>
+	<div>
+
+</div>
+
+<!-- 弹出窗 -->
+<div class="easyui-dialog popBox" title="编辑信息" style="width:360px;height:230px;" data-options="iconCls:'icon-edit',resizable:true,closable:false,closed:true,cache: false,modal: true">
+	<form id="form-editbox" class="popForm pad15" method="post">
+		<div class="fluidbox"><label class="lab-item">序号：</label><input type="text" class="txt easyui-validatebox"  data-options="required:true" name="code" /></div>
+		<div class="fluidbox"><label class="lab-item">名称：</label><input type="text" class="txt easyui-validatebox"  data-options="required:true" name="name" /></div>
+		<div class="fluidbox"><label class="lab-item">地址：</label><input type="text" class="txt easyui-validatebox"  data-options="required:true" name="addr" /></div>
+		<div class="fluidbox"><label class="lab-item">第四列：</label><input type="text" class="txt easyui-validatebox"  data-options="required:true" name="col4" /></div>
+		<p class="p-item p-btn"><a href="#" class="easyui-linkbutton a-popSubmit" data-options="iconCls:'icon-save'">确定</a> <a id="btn" href="#" class="easyui-linkbutton a-popClose" data-options="iconCls:'icon-cancel'">取消</a></p>
+	</form>
+</div>
+
+
+<script type="text/javascript">
+
+var tempData = {
+"total":239,
+"rows":[
+	{"code":"001","name":"Name 1","addr":"Address 11","col4":"col4 data","url":"http://www.baidu.com/"},
+	{"code":"002","name":"Name 2","addr":"Address 13","col4":"col4 data","url":"http://www.baidu2.com/"},
+	{"code":"003","name":"Name 3","addr":"Address 87","col4":"col4 data","url":"http://www.baidu3.com/"},
+	{"code":"004","name":"Name 4","addr":"Address 63","col4":"col4 data","url":"http://www.baidu4.com/"},
+	{"code":"005","name":"Name 5","addr":"Address 45","col4":"col4 data","url":"http://www.baidu5.com/"},
+	{"code":"006","name":"Name 6","addr":"Address 16","col4":"col4 data","url":"http://www.baidu6.com/"},
+	{"code":"007","name":"Name 7","addr":"Address 27","col4":"col4 data","url":"http://www.baidu7.com/"},
+	{"code":"008","name":"Name 8","addr":"Address 81","col4":"col4 data","url":"http://www.baidu8.com/"},
+	{"code":"009","name":"Name 9","addr":"Address 69","col4":"col4 data","url":"http://www.baidu9.com/"},
+	{"code":"010","name":"Name 10","addr":"Address 78","col4":"col4 data","url":"http://www.baidu10.com/"}
+]
+}
+
+
+
+	var nowSel = null;
+	$('#dataGrid-a').datagrid({
+		onClickRow:function (rowIndex, rowData) {
+			nowSel = rowData;
+		},
+		onLoadSuccess:function(data){
+			if(data.rows.length==0){//无数据提示
+				var body = $(this).data().datagrid.dc.body2;
+				body.find('table tbody').append('<tr><td width="'+body.width()+'" style="height: 25px; text-align: center;" colspan="6">没有数据</td></tr>');
+			}
+		}
+	});
+	
+/* 增加 */
+	function girdAdd() {
+		console.log(nowSel);
+		if (nowSel) {//是否选择行
+			alert(nowSel.name);
+		}else {//没有选择行
+			$.messager.alert('提示','请选择操作行');
+		}
+	}
+/* 编辑 */
+	function girdEdit() {
+		console.log(nowSel);
+		if (nowSel) {//是否选择行
+			alert(nowSel.name);
+		}else {//没有选择行
+			$.messager.alert('提示','请选择操作行');
+		}
+	}
+/* 快速编辑 */
+	function girdQuickEdit() {
+		if (nowSel) {
+			$('.popBox').window('open');
+			$('#form-editbox').form('clear').form('setVal',nowSel);
+		}else{
+			$.messager.alert('提示','请选择操作行');
+		}
+	}
+/* 删除 */
+	function girdRemove() {
+		if (nowSel) {//是否选择行
+			$.messager.confirm('请确认','你确认删除此记录？',function(r){//confirm 是否删除
+				if (r){
+					$.messager.show({//删除提示
+						title:'确认',
+						msg:'你已删除此记录，提示消息5秒后消失。',
+						timeout:5000,
+						showType:'slide'
+					});
+				}
+			});
+		}else {//没有选择行
+			$.messager.alert('提示','请选择操作行');
+		}
+	}
+
+	$('.a-popSubmit').click(function () {//弹出框提交
+		$('#form-editbox').submit();
+		return false;
+	});
+	$('.a-popClose').click(function () {//弹出框关闭
+		//$(this).parents('.popForm').form('clear');
+		$(this).parents('.popBox').window('close');
+		return false;
+	});
+
+
+	$('#form-editbox').form({//表单提交事件
+		//url:'w.php',
+		onSubmit: function(){
+			var isValid = $(this).form('validate');
+			if (isValid){
+				$(this).parents('.popBox').window('close');
+				$.messager.progress();
+			}
+			return isValid;// 返回false将停止form提交 
+		},
+		success:function(data){
+			$.messager.progress('close');// 当成功提交之后隐藏进度条
+		}
+	}); 
+
+
+	$('.a-searchSubimt').click(function () {
+		var searchData = $('.form-search').form('serialize');
+		console.log(searchData);
+	});
+
+</script>
+
+</body>
+</html>

@@ -1,0 +1,485 @@
+@charset "utf-8";
+*{ margin: 0; padding: 0;}
+body{font-family:"宋体","ff-tisa-web-pro-1","ff-tisa-web-pro-2","Lucida Grande","Hiragino Sans GB","Hiragino Sans GB W3", "Microsoft YaHei";}
+.shop_login_sprite{background-image:url(http://cdn09.ehaier.com/v5/images/shop_login_sprite.png); background-repeat:no-repeat;}
+a{text-decoration:none;}
+a:hover {text-decoration:none;}
+li{ list-style: none}
+:focus{outline:none;}
+.clear{ clear:both}
+img{vertical-align:middle;}
+.shop_align_c{display:block; text-align:center;}
+.shop_blue_text{color:#005aaa; font-style:normal;}
+.hide_div{display:none;}
+.a_l{float:left;}
+.a_r{float:right;}
+input{-moz-border-radius:3px;-webkit-border-radius:3px;border-radius:3px;}
+.shop-login-header ul{float:right; padding:10px 0 0 0;}
+.shop-login-header ul li{float:left; padding-left:30px;padding-bottom: 0px;padding-top:20px;}
+/*.shop-login-header ul li a{background:url(http://cdn09.ehaier.com/v5/images/shop_icon_arrow_w7h12_2.png) left 2px no-repeat; color:#005aaa; font-size:14px; padding-left:10px;}*/
+.shop-login-header ul li a{color:#005aaa; font-size:14px; padding-left:10px;}
+
+
+.lotop{ width:1000px; margin:0 auto; padding:20px 0 25px 0; }
+.lotop dt{font: normal 22px/22px 'Microsoft Yahei'; float:left; width:330px; height:70px;  line-height:70px; font-size:20px; color:#666666; }
+.lotop dt img{width:150px; height:70px; }
+.lotop dt a{text-decoration: none}
+.lotop dd{float:right; width:200px; padding-top:40px; color:#999999; font-size:12px;}
+.lotop dd a{color:#666666; font-size:12px; margin-left:3px; padding:3px 10px;-moz-border-radius:3px;-webkit-border-radius:3px;border-radius:3px; border:1px #dddddd solid; }
+
+
+
+#shop-body{background-color:#fff; overflow:hidden; width:100%; min-height:500px; padding-bottom:1px; position:relative; z-index:1;}
+
+/* header */
+.shop-login-header {border-bottom:1px solid #f2f2f2;}
+.shop-login-header .inner{margin:0 auto; overflow:hidden; padding:20px 0; position:relative; width:1000px; zoom:1;}
+
+.shop-login-header,.shop_reg_wrap{width:100%;overflow:hidden;min-width:1000px;background: #fff;}
+.shop-login-header .inner{margin:0 auto; overflow:hidden; padding:20px 0; position:relative; width:1000px; zoom:1;}
+
+.shop_login_wrap{width:100%;height: 500px;overflow:hidden;min-width:1000px;background: #c3edfd;}
+.shop_reg_wrap{background:url(http://cdn09.ehaier.com/v5/images/shop_login_wrap_bg.png) center bottom no-repeat; height:470px;}
+.shop_login_wrap .inner{position: relative;margin:0 auto; line-height: 20px; width:1000px; height: 500px;  color:#666;}
+.shop_reg_wrap .inner{margin:0 auto; position:relative; padding:10px 0 0 510px; width:490px;}
+
+.login-h1-site {float:left;width:320px;height:49px;padding:0 0 0 10px;}
+.login-a-logo {float:left;width:130px;height:65px;overflow:hidden;}
+.login-s-slogan {float:left;margin:-6px 0 0 5px;padding-left:5px;display:inline;}
+
+
+/* login */
+.side-as{float:left;width:255px; padding:30px 40px; background:#fff; margin-top:80px;-moz-border-radius:4px;-webkit-border-radius:4px;border-radius:4px; }
+/*#entry{ background:#e8e8e8;-moz-border-radius:0px; -webkit-border-radius:0px;border-radius:0px;padding:0px;position:relative;}*/
+
+
+.shop_login_wrap .login_register{width:255px; padding:30px 40px;background:#fff;-moz-border-radius:4px;-webkit-border-radius:4px;border-radius:4px; position:absolute; right: 20px; top: 60px;}
+.shop_login_wrap .col_l{font-size:14px; left:35px; position:absolute; top:290px; width:300px;}
+.shop_login_wrap .col_l dt{color:#32beff; font:bold 22px/22px 'Microsoft Yahei'; margin-bottom:25px;}
+.shop_login_wrap .login_register h2{ color: #666; font:normal 22px/22px 'Microsoft Yahei'; position:relative; margin-bottom: 10px;}
+.shop_login_wrap .login_register h2 a{background-position:0 0; color:#005aaa; font-size:12px; line-height:20px; position:absolute; right:0; padding-left:25px;}
+.shop_login_wrap .login_register h2 a:hover{text-decoration:none;}
+.shop_login_wrap .login_register h2 a:hover span{text-decoration:underline;}
+.shop_login_wrap .login_form{}
+.shop_login_wrap .form_row{font-size:12px; overflow:hidden; position:relative; width:100%; zoom:1;}
+.shop_login_wrap .form_row .a_l{float:left;}
+.shop_login_wrap .form_row .a_r{float:right;}
+/*
+.shop_login_wrap .form_row .hide_tips{background:url(shop_bg_login_tips.png) no-repeat; display:none; font-size:12px; height:60px; position:absolute; padding:6px 12px 0; right:-20px; top:-50px; width:178px;z-index:100;}
+*/
+.shop_login_wrap .form_row .hide_tips{display:none; font-size:12px;color: red; }
+.shop_login_wrap .form_row label{color:#a4a4a4; left:38px; position:absolute; top:7px;font-size:14px;}
+.shop_login_wrap .form_row input{border:1px solid #e4e4e4; height:16px; line-height: 16px; padding:8px 3px 8px 38px; width:210px;}
+.shop_login_wrap .form_row .w84{border:1px solid #e4e4e4;}
+.shop_login_wrap .form_row .wred{border:1px solid #f00}
+.shop_login_wrap .form_row .gbreen{border:1px solid #95c881}
+.shop_login_wrap .form_row .Light_red{ color:#eab6b6;}
+.shop_login_wrap .form_row .reseda{ color:#b8dcaa;}
+.shop_login_wrap .form_row .gray{ color:#ccc;}
+.shop_login_wrap .form_row input.fe_text_valcode{padding:8px 0; text-align:center; width:88px;}
+.shop_login_wrap .form_row .valcode_holder{margin:0 10px;}
+.shop_login_wrap .form_row .icon_p,
+.shop_login_wrap .form_row .icon_m{background-position:0 -30px; left:12px; height:20px; position:absolute; top:7px; width:20px;}
+.shop_login_wrap .form_row .wico{ font-size:20px; left:1px; position:absolute; top:2px; width:32px; height:31px;  background:#f3f3f3;-moz-border-radius:4px 0 0 4px;-webkit-border-radius:4px 0 0 4px;border-radius:4px 0 0 4px; text-align:center; line-height:32px; border-right:1px solid #e4e4e4;}
+.shop_login_wrap .form_row .icon_p{background-position:0 -60px;}
+.shop_login_wrap .form_row a:hover span{text-decoration:underline;}
+.shop_login_wrap .radio_box .c_radio{background-position:-5px -119px; cursor:pointer; padding-left:22px;}
+.shop_login_wrap .radio_box .on{background-position:-5px -89px;}
+.shop_login_wrap .btn_box{padding:8px 0;}
+.shop_login_wrap .btn_box a,
+.shop_login_wrap .btn_box a b{display:block; font-size:15px;}
+.shop_login_wrap .form_row a{color:none;}
+.shop_login_wrap .radio_box input{display:none;}
+.validation_marked_info{color:#f00;}
+.paswrong{ background:#ffebeb; font-size: 12px; border:1px solid #e84040; color:#e60707; display:block;height:20px; padding:0 3px; margin-bottom:2px}
+
+.validation_marked_info a{color:#005aaa;}
+.shop_other_login{font-size:12px;  padding-top:10px;}
+.shop_other_login ul{ padding:0;+padding-right:0;}
+.shop_other_login li{ height:24px; margin-right:10px;}
+.shop_other_login li a{ color: #666;  display: inline-block;}
+/*.shop_other_login li a{background-image:url(http://cdn09.ehaier.com/v5/images/shop_login_sprite.png); background-repeat:no-repeat; font-size:12px; float:left; line-height:20px; padding-left:25px; width:auto;}
+.shop_other_login li a.weibo{background-position:0 -154px;}
+.shop_other_login li a.ren{background-position:0 -187px;}
+.shop_other_login li a.alipay{background-position:0 -222px;}
+.shop_other_login li a.tqq{background-position:0 -259px;}
+.shop_other_login li a.wechat{background-position:0 -301px;}
+.shop_other_login li a.wangyi{background-position:0 -342px;}*/
+
+.shop_other_login li .alipay{ background:url(../images/icon1.jpg) no-repeat 1px 3px; padding-left:20px;}
+.shop_other_login li .qq{background:url(../images/icon2.jpg) no-repeat 0 3px; padding-left:20px; margin-left:10px;}
+.shop_other_login li .weixin{background:url(../images/icon3.png) no-repeat 0 3px; padding-left:20px; margin-left:10px;}
+
+
+
+/*注册成功、找回密码*/
+.shop_info_wrap,.nr_forget_pw_wrap{margin:0 auto; width:570px;font-size: 14px;}
+.shop_reg_wrap .inner{margin:auto; position:relative; padding:10px 0 0 510px; width:490px;}
+.shop_info_wrap h2{font:normal 32px/32px 'Microsoft Yahei'; padding:45px 0; text-align:center;}
+.shop_info_wrap h2 span{color:#32beff;}
+.shop_info_wrap .email_valid,
+.shop_info_wrap .reset_pw_success{background:#f5f5f5; color:#909090; margin:0 0 25px 0; padding:25px; width:520px;}
+.shop_info_wrap .email_valid strong,
+.shop_info_wrap .reset_pw_success strong{color:#606060; font-weight:normal;}
+.shop_info_wrap .email_valid a{color:#005aaa;}
+.shop_info_wrap .form_row a{color:#005aaa;}
+.shop_info_wrap .email_valid span{background:url(http://cdn09.ehaier.com/v5/images/shop_icon_yes_w32.png) left center no-repeat; color:#909090; display:block; line-height:32px; padding-left:45px;}
+.shop_info_wrap .email_valid strong{color:#606060; font-weight:normal;}
+
+.shop_info_wrap .no_sms_error{border-top:1px solid #ddd; margin:20px 0 0; position:relative; padding:20px 0 0 150px; width:420px;}
+.shop_info_wrap .no_sms_error .col_l,
+.shop_info_wrap .reg_success_btm .col_l{left:0; position:absolute; top:20px; text-align:right; width:125px;}
+.shop_info_wrap .no_sms_error ul li{background:url(http://cdn09.ehaier.com/v5/images/shop_icon_dotted_blue_2.png) left center no-repeat; line-height:21px; padding-left:15px;}
+.shop_info_wrap .no_sms_error ul li a{color:#005aaa;}
+.shop_info_wrap .no_sms_error ul li.btn_resend_email{background:none; padding:10px 0 0 15px;}
+.shop_info_wrap .no_sms_error ul li.change_email{background:none; display:none; padding:10px 0 10px 15px;}
+.shop_info_wrap .no_sms_error ul li.change_email .error{color:#f00; display:none; padding:5px 0 0;}
+
+.shop_info_wrap .info_form{width:100%;}
+.shop_info_wrap .form_row{font-size:14px; margin-bottom:0;_margin-bottom:0;line-height:34px; padding:0 0 10px 150px; position:relative; width:420px;}
+.shop_info_wrap .form_row label{left:0; line-height:34px; position:absolute; text-align:right; width:130px;}
+
+
+
+/*步骤引导*/
+.nr_forget_pw_wrap .f_pw_step{background-image:url(http://cdn09.ehaier.com/v5/images/shop_bg_forget_pw_step.png); background-repeat:no-repeat; font-size:14px; height:40px; margin-bottom:45px; padding:0;}
+.nr_forget_pw_wrap .f_pw_step li{float:left; line-height:40px; text-align:center; width:190px;}
+.nr_forget_pw_wrap .f_pw_step li.on{color:#fff;}
+.nr_forget_pw_wrap .f_pw_step_1{background-position:0 0;}
+.nr_forget_pw_wrap .f_pw_step_2{background-position:0 -40px;}
+.nr_forget_pw_wrap .f_pw_step_3{background-position:0 -80px;}
+/*忘记密码*/
+.nr_forget_pw_wrap{margin:0 auto; width:570px;}
+.nr_forget_pw_wrap h2{font:normal 32px/32px 'Microsoft Yahei'; padding:15px 0 15px 0; text-align:center;margin-right:15px;}
+.nr_forget_pw_wrap h2 span{color:#32beff;}
+
+
+.nr_forget_pw_wrap .f_pw_form{width:100%;}
+/*line-height:16px 为适应1024等分辨率*/
+.nr_forget_pw_wrap .form_row{line-height:16px;margin-top:8px; padding:0 0 5px 150px; position:relative; width:420px;}
+.nr_forget_pw_wrap .form_row label{left:0; line-height:34px; position:absolute; text-align:right; width:130px;}
+.nr_forget_pw_wrap .fe_text{color:#a4a4a4;border:1px solid #e4e4e4; height:26px; line-height:26px; padding:3px; width:242px;}
+.nr_forget_pw_wrap .fe_text_min{width:82px;}
+.nr_forget_pw_wrap .fe_text_min_2{width:56px;}
+.nr_forget_pw_wrap .fe_text_w108{width:108px;}
+.nr_forget_pw_wrap .fe_text_w150{width:150px;}
+.nr_forget_pw_wrap .form_row .v_code_holder{margin:0 5px;+margin-top:-16px;height: 35px;width: 95px;}
+.nr_forget_pw_wrap .form_row a{color:#005aaa;}
+.nr_forget_pw_wrap .get_way_box label{line-height:22px;}
+.nr_forget_pw_wrap .get_way_box label.lh_34{line-height:16px;}/*为适应1024分辨率修改*/
+.nr_forget_pw_wrap .get_way{margin-right:10px;}
+.nr_forget_pw_wrap .get_way a{background-image:url(http://cdn09.ehaier.com/v5/images/shop_login_sprite.png); background-position:0 -415px; +background-position:0 -419px; background-repeat:no-repeat; color:#606060; padding-left:19px;padding-bottom:5px;}
+.nr_forget_pw_wrap .get_way a:hover{color:#005aaa;text-decoration:none;}
+.nr_forget_pw_wrap .get_way input{display:none;}
+.nr_forget_pw_wrap .get_way a.on{background-position:0 -382px; +background-position:0 -385px;}
+.nr_forget_pw_wrap .no_m_error{color:#f00; display:none; line-height:21px; padding:2px 0 0 138px;}
+.nr_forget_pw_wrap .by_email_result,
+.nr_forget_pw_wrap .reset_pw_success{background:#f5f5f5; color:#909090; margin:0 0 25px 0; padding:25px; width:520px;}
+.nr_forget_pw_wrap .by_email_result strong,
+.nr_forget_pw_wrap .reset_pw_success strong{color:#606060; font-weight:normal;}
+.nr_forget_pw_wrap .by_email_result a{color:#005aaa;}
+.nr_forget_pw_wrap .by_email_result span{background:url(http://cdn09.ehaier.com/v5/images/shop_icon_yes_w32.png) left center no-repeat; color:#909090; display:block; line-height:32px; padding-left:45px;}
+.nr_forget_pw_wrap .by_email_result strong{color:#606060; font-weight:normal;}
+.nr_forget_pw_wrap .reset_pw_success{text-align:center;}
+.nr_forget_pw_wrap .reset_pw_success strong{color:#303030; display:block; font-weight:normal; font-size:22px; padding:5px 0;}
+.nr_forget_pw_wrap .reset_pw_success p{color:#909090; padding:0;}
+.nr_forget_pw_wrap .reset_pw_success p span{color:#606060;}
+.nr_forget_pw_wrap .reset_pw_success p a{color:#005aaa;}
+.nr_forget_pw_wrap .nr_abtn_bl{margin-right:5px;}
+
+.nr_forget_pw_wrap .no_sms_error{border-top:1px solid #ddd; margin:20px 0 0; position:relative; padding:20px 0 0 150px; width:420px;}
+.nr_forget_pw_wrap .no_sms_error .col_l,
+.nr_forget_pw_wrap .reg_success_btm .col_l{left:0; position:absolute; top:20px; text-align:right; width:125px;}
+.nr_forget_pw_wrap .no_sms_error ul li{background:url(http://cdn09.ehaier.com/v5/images/nr_icon_dotted_blue_2.png) left center no-repeat; line-height:21px; padding-left:15px;}
+.nr_forget_pw_wrap .no_sms_error ul li a{color:#005aaa;}
+.nr_forget_pw_wrap .no_sms_error ul li.btn_resend_email{background:none; padding:10px 0 0 15px;}
+.nr_forget_pw_wrap .no_sms_error ul li.change_email{background:none; display:none; padding:10px 0 10px 15px;}
+.nr_forget_pw_wrap .no_sms_error ul li.change_email .error{color:#f00; display:none; padding:5px 0 0;}
+
+.nr_forget_pw_wrap .reg_success_btm{border-top:1px solid #ddd; font-size:14px; margin:20px 0 0; padding:20px 0 35px; width:570px;}
+.nr_forget_pw_wrap .reg_success_btm .row{padding:0 0 20px 95px; position:relative; width:475px;}
+.nr_forget_pw_wrap .reg_success_btm .row dt a{color:#005aaa;}
+.nr_forget_pw_wrap .reg_success_btm .row dd{color:#909090;}
+.nr_forget_pw_wrap .reg_success_btm .icons{background-image:url(http://cdn09.ehaier.com/v5/images/nr_login_sprite.png); background-repeat:no-repeat; height:33px; left:50px; position:absolute; top:5px; width:33px;}
+.nr_forget_pw_wrap .reg_success_btm .row_1 .icons{background-position:0 -460px;}
+.nr_forget_pw_wrap .reg_success_btm .row_2 .icons{background-position:0 -519px;}
+.nr_forget_pw_wrap .reg_success_btm ul{border-top:1px solid #ddd; padding:20px 0 0 95px;}
+.nr_forget_pw_wrap .reg_success_btm li a{background:url(http://cdn09.ehaier.com/v5/images/nr_icon_arrow_w7h12_2.png) left center no-repeat; color:#005aaa; padding-left:15px;}
+.nr_forget_pw_wrap .other_btm_text{border-top:1px solid #ddd; margin:10px 0 0; padding:15px 0 0; text-align:center;}
+.nr_forget_pw_wrap .other_btm_text a{color:#005aaa;}
+
+.nr_forget_pw_wrap span.info_error{display:block; padding-left:154px;}
+
+.nr_reg_success_pro{border-top:1px solid #ddd; font-size:14px; line-height:21px; margin:0 auto; padding:35px 0; width:1000px;}
+.nr_reg_success_pro strong{color:#32beff; font-weight:normal;}
+.nr_reg_success_pro .pro_list_wrap{overflow:hidden; padding:40px 0 0; width:1000px;}
+.nr_reg_success_pro .pro_list_inner{text-align:center; width:1020px; zoom:1;}
+.nr_reg_success_pro .pro_list_item{display:inline-block; *display:inline; margin-right:20px; width:235px; zoom:1;}
+.nr_reg_success_pro .pro_list_item dl{padding:15px 0; text-align:left;}
+.nr_reg_success_pro .pro_list_item li{color:#909090; position:relative; padding-left:80px; text-align:left; width:155px;}
+.nr_reg_success_pro .pro_list_item li .col_l{left:0; line-height:21px; position:absolute; top:0;}
+.nr_reg_success_pro .pro_list_item li .ipt_check{background-image:url(http://cdn09.ehaier.com/v5/images/nr_login_sprite.png); background-repeat:no-repeat; background-position:-5px -121px; color:#606060; cursor:pointer; display:block; margin-top:10px; padding:0 0 0 22px; zoom:1;}
+.nr_reg_success_pro .pro_list_item li .ipt_check input{display:none;}
+.nr_reg_success_pro .pro_list_item li .on{background-position:-5px -88px; _background-position:-5px -90px;}
+.nr_reg_success_pro .a_links{border-top:1px solid #ddd; margin-top:40px; padding-top:15px; text-align:center;}
+.nr_reg_success_pro .a_links a{margin:0 10px;}
+.nr_reg_success_pro .a_links .arrow_link{background:url(nr_icon_arrow_w7h12_2.png) left 4px no-repeat; padding-left:12px;}
+
+.strengthA{display:inline-block;width:100px;height:13px;background: url(/shoppingmall_members/resources/images/pwdstrength.gif) 0px 0px}
+.strengthB{display:inline-block;width:100px;height:13px;background: url(/shoppingmall_members/resources/images/pwdstrength.gif) 0px 26px}
+.strengthC{display:inline-block;width:100px;height:13px;background: url(/shoppingmall_members/resources/images/pwdstrength.gif) 0px 13px}
+
+.nr_forget_pw_wrap .top_note{background:#f5f5f5; height:67px; margin-bottom:5px; margin-right:auto;margin-left:auto; padding:10px; position:relative; padding-left:85px; width:400px;}
+.nr_forget_pw_wrap .top_note .header_img{border:1px solid #fff; height:65px; left:10px; position:absolute; top:10px; width:65px;}
+.nr_forget_pw_wrap .top_note dt{padding:6px 0;}
+
+.nr_forget_pw_wrap .btn_val_box{padding:12px 0 0 154px;}
+.nr_forget_pw_wrap .w_250{text-align:center; width:250px;}
+.nr_forget_pw_wrap .btn_w_190 b{text-align:center; width:190px;}
+.nr_forget_pw_wrap .f_s12{font-size:12px;}
+
+.nr_login_wrap input.info_error,
+.nr_forget_pw_wrap input.info_error{border-color:#f00;}
+.nr_forget_pw_wrap .p_l_25{display:block; padding-left:25px;}
+.nr_forget_pw_wrap .change_mobile{color:#606060; display:none; padding:10px 0 0 45px;}
+.nr_forget_pw_wrap .change_mobile .error{color:#f00; display:none; padding:5px 0 0 88px;}
+.nr_forget_pw_wrap .reset_pw_success p .countdown_number{color:#ff8730;}
+.email_val_single{padding:0 0 0 15px;}
+.email_val_single .btns{display:block; padding:15px 0 0 135px;}
+.email_val_single .validation_marked_info{padding:5px 0 0 135px;}
+
+/*register*/
+.shop_reg_wrap .login_register{background:#fff; border:1px solid #ddd; border-radius:3px; position:relative; width:488px;}
+.shop_reg_wrap .col_l{font-size:14px; left:35px; position:absolute; top:290px; width:300px;}
+.shop_reg_wrap .col_l dt{color:#32beff; font:bold 22px/22px 'Microsoft Yahei'; margin-bottom:25px;}
+.shop_reg_wrap .login_register{background:#fff; border:1px solid #ddd; border-radius:3px; position:relative; width:488px;}
+.shop_reg_wrap .login_register h2{border-bottom:1px solid #ddd; font:normal 22px/22px 'Microsoft Yahei'; padding:25px 0 15px 15px; position:relative;}
+.shop_reg_wrap .login_register h2 a{background-position:0 0; color:#005aaa; font-size:12px; line-height:20px; position:absolute; right:15px; padding-left:25px;}
+.shop_reg_wrap .login_register h2 a:hover{text-decoration:none;}
+.shop_reg_wrap .login_register h2 a:hover span{text-decoration:underline;}
+.shop_reg_wrap .login_form{padding:15px 114px 20px; width:260px;}
+.shop_reg_wrap .form_row{font-size:12px; line-height:20px; margin-bottom:10px; overflow:hidden; position:relative; width:100%; zoom:1;}
+.shop_reg_wrap .form_row .a_l{float:left;}
+.shop_reg_wrap .form_row .a_r{float:right;}
+.nr_forget_pw_wrap .validation_marked_info{float:none;color:#f00;position: relative;font-size: 12px; height: 12px; line-height: 14px;}
+/*
+.shop_reg_wrap .form_row .hide_tips{background:url(shop_bg_login_tips.png) no-repeat; display:none; font-size:12px; height:60px; position:absolute; padding:6px 12px 0; right:-20px; top:-50px; width:178px;z-index:100;}
+*/
+.hide_tips{display:none; font-size:12px;color: red; }
+.shop_reg_wrap .form_row label{color:#a4a4a4; position:absolute; text-align:right; width:60px;line-height: 38px}
+.shop_reg_wrap .form_row input{border:1px solid #e4e4e4; height:26px; line-height:26px; padding:3px 3px 3px 65px; width:190px;}
+.shop_reg_wrap .fe_text{border:1px solid #e4e4e4; height:26px; line-height:26px; padding:3px; width:242px;}
+.shop_reg_wrap .form_row input.fe_text_valcode{padding:3px; text-align:center; width:88px;}
+.shop_reg_wrap .form_row .valcode_holder{margin:0px;height:10px;}
+.shop_reg_wrap .form_row .icon_p,
+.shop_reg_wrap .form_row .icon_m{background-position:0 -30px; left:12px; height:20px; position:absolute; top:7px; width:20px;}
+.shop_reg_wrap .form_row .icon_p{background-position:0 -60px;}
+.nr_forget_pw_wrap .radio_box .a_l{float:left;margin-right: 45px;*margin-right:36px;}
+.nr_forget_pw_wrap .radio_box .a_l_1{float:left;}
+.nr_forget_pw_wrap .radio_box .a_r{float:right;}
+.nr_forget_pw_wrap .radio_box{font-size:12px; line-height:20px; margin-bottom:10px; overflow:hidden; position:relative; width:100%; zoom:1;}
+.nr_forget_pw_wrap .radio_box .c_radio{background-position:-5px -120px; cursor:pointer; padding-left:22px;}
+.nr_forget_pw_wrap .radio_box .on{background-position:-5px -89px;}
+.shop_reg_wrap .btn_box{padding:8px 0;}
+.shop_reg_wrap .btn_box a,
+.shop_reg_wrap .btn_box a b{display:block; font-size:15px;}
+.shop_reg_wrap .form_row a{color:#005aaa;}
+
+.labelshow{color:#a4a4a4; position:absolute; text-align: center;}
+/*
+.nr_forget_pw_wrap .fe_text_min{width:82px;}
+.nr_forget_pw_wrap .fe_text_min_2{width:56px;}
+.nr_forget_pw_wrap .fe_text_w108{width:108px;}
+.nr_forget_pw_wrap .fe_text_w150{width:150px;}
+.nr_forget_pw_wrap .form_row .v_code_holder{margin:0 5px;}
+.nr_forget_pw_wrap .form_row a{color:#005aaa;}
+*/
+
+
+/* =================== 公用按钮 [nr_abtn_*] ===================== */
+/* 根据nr版本定义的共用按钮，有蓝色（b）和灰色（g）2个版本，每个版本有大（L）,中（M）,小（S）三个尺寸。其中L，M有带图标的版本，S没有带图标版本。
+   图标宽度自定，高度100px，分为上下两部分，上面部分是白色，下面部分是浅蓝色。hover改变img的top值。
+   不带图标的按钮HTML结构：
+   <a href="#" class="nr_abtn_bs"><b>按钮名称</b></a>
+   其中class的统一前缀nr_abtn_，b代表蓝色blue，s代表尺寸small。
+   带图标的按钮HTML结构：
+   <a href="#" class="nr_abtn_bm"><b><i class="i_demo">按钮名称</i></b></a>
+   i_demo为图标class，使用前需要定义好。
+   注意，i标签放在b开始标签之后，不得放在尾部。
+*/
+/* ================================================================== */
+/* shop_abtn_bl */
+.shop_abtn_bl{
+    background-position:0 -400px;
+    padding-left:5px;
+    margin:0;
+    vertical-align:middle;
++vertical-align:baseline;
+}
+.shop_abtn_bl,
+.shop_login_wrap .form_row .shop_abtn_bl b{ display:block; height:32px; line-height:32px; font-size:16px; color:#fff; text-align:center; background:#d9003f;-moz-border-radius:4px;-webkit-border-radius:4px;border-radius:4px;}
+
+.shop_abtn_bl b i{
+    height:25px;
+    display:inline-block;
+    margin-left:-10px;
+    margin-right:-10px;
+    padding-left:30px;
+    background-position:0 0;
+    background-repeat:no-repeat;
+    font-style:normal;
+    background-image:url(http://cdn09.ehaier.com/v5/images/shop_bi_sprite.png);
+}
+.shop_abtn_bl:hover{
+    background-position:0 -500px;
+}
+.shop_abtn_bl:hover b{
+    background-position:right -550px;
+}
+.shop_abtn_bl:hover b i{
+    background-position:0 0;
+}
+
+/* nr_abtn_gm */
+.nr_abtn_gm{
+    background-position:0 -200px;
+    padding-left:5px;
+    margin:0;
+    vertical-align:middle;
+}
+.nr_abtn_gm,
+.nr_abtn_gm b{
+    background-image:url(http://cdn09.ehaier.com/v5/images/shop_abtn_grey.png);
+    background-repeat:no-repeat;
+    display:inline-block;
+    height:34px;
+    overflow:hidden;
+}
+.nr_abtn_gm b{
+    background-position:right -250px;
+    line-height:20px;
+    font-size:14px;
+    height:20px;
+    overflow:hidden;
+    color:#32beff;
+    font-weight:300;
+    text-align:center;
+    font-family:"Microsoft Yahei";
+    padding:7px 30px 7px 25px;
+    cursor:pointer;
+}
+.nr_abtn_gm b i{
+    height:20px;
+    display:inline-block;
+    margin-left:-15px;
+    margin-right:-15px;
+    padding-left:25px;
+    background-position:0 -50px;
+    background-repeat:no-repeat;
+    font-style:normal;
+}
+.nr_abtn_gm:hover{
+    background-position:0 -300px;
+}
+.nr_abtn_gm:hover b{
+    background-position:right -350px;
+    color:#fff;
+}
+.nr_abtn_gm:hover b i{
+    background-position:0 0;
+}
+
+
+
+input.info_error {border-color:#d71249;}
+
+input.info_notice {border-color:#e1d87d;}
+
+input.info_success {border-color:#98cb4f;}
+
+input.input_datapicker {width:70px;}
+
+
+/* login_notification */
+
+.login_notification{padding:10px 10px;border:solid 1px #ddd;line-height:1.7em;margin:0 3px 5px;}
+
+.login_notification .notice,
+
+.login_notification .success,
+
+.login_notification .error{background:url(http://cdn09.ehaier.com/v3/images/login/icon_p.png) no-repeat 0 0;padding-left:23px;display:inline-block;margin-right:10px;}
+
+.login_notification .notice{background-position:0 0;}
+
+.login_notification .success{background-position:0 -50px;}
+
+.login_notification .error{background-position:0 -100px;}
+
+/* regist_smscfm */
+.regist_smscfm{position: relative;border:1px solid #33BEFF;background-color:#EAF8FF;width:516px;font:normal 32px/32px 'Microsoft Yahei'; padding:20px 10px 0px 20px;}
+.regist_smscfm .title{text-align:center;font-size:16px;color:#0190D2;font-weight:bold;height:50px;line-height:50px;}
+.regist_smscfm .warn{text-align:center;font-size:15px;height:50px;color:#464646;font-weight:bolder;line-height:50px;}
+.regist_smscfm .warn img{margin-top:-1px;}
+.regist_smscfm .info{font-size:14px;height:45px;color:#400000;margin-left:100px;}
+.regist_smscfm .info label{padding-right:15px;}
+.regist_smscfm .msm_info{margin-left:86px;padding-left:18px;color:#400000;background: url("http://cdn09.ehaier.com/v5/images/login/ok.gif") no-repeat;}
+.regist_smscfm .icon{background: url("http://cdn09.ehaier.com/v5/images/login/close.gif") no-repeat;height:10px;width:10px;display: inline-block;position: absolute;top:13px;left:520px;}
+.regist_smscfm .form_row{padding:0px;margin-left:100px;}
+.regist_smscfm .form_row .hide_tips{display:none; font-size:12px;color: red; }
+.regist_smscfm .form_row label{font-size:14px;padding-right:13px; line-height: 34px;width: 130px;position: static;color:#400000;}
+.regist_smscfm .form_row input{border:1px solid #e4e4e4;height:26px; padding:8px 18px 8px 18px; width:50px;}
+.regist_smscfm .form_row input.fe_text_valcode{padding:3px; text-align:center; width:88px;}
+.regist_smscfm .form_row .valcode_holder{margin:0 10px;}
+.regist_smscfm .form_row .icon_p,
+.regist_smscfm .form_row .icon_m{background-position:0 -30px; left:12px; height:20px; position:absolute; top:7px; width:20px;}
+.regist_smscfm .form_row .icon_p{background-position:0 -60px;}
+.regist_smscfm .form_row a:hover span{text-decoration:underline;}
+.regist_smscfm .btn_w_80 b{text-align:center; width:80px;}
+.regist_smscfm .sbmit{text-align:center;height:50px;margin-top:10px;}
+.regist_smscfm .validation_marked_info{margin-left:85px;}
+
+.regist_smscfm_login{width:460px;margin-left:38px;}
+.regist_smscfm_login .icon{background: url("http://cdn09.ehaier.com/v5/images/login/close.gif") no-repeat;height:10px;width:10px;display: inline-block;position: absolute;top:13px;left:465px;}
+
+/* mailList */
+.form_row_email{position:relative;}
+.ul-mailList{position:absolute;left:35px;top:26px;width:217px;background:#fff;border:1px solid #ccc;display:none;}
+.ul-mailList .li-now{background:#666;color:#fff;}
+.ul-mailList a{display:block;padding:2px 5px;}
+.ul-mailList .li-now a,.ul-mailList a:hover{background:#666;color:#fff;}
+
+
+/*edit*/
+.js_mmjs_validation_fe_wrap {
+    height: 54px;
+}
+
+.form_row .icon-font {
+    color: #ccc;
+}
+
+
+.form_row_focus input[type="text"],
+.form_row_focus input[type="password"] {
+    border-color: #95c881;
+}
+
+.form_row_focus .icon-font {
+    color: #95c881;
+}
+
+.form_row_error input[type="text"],
+.form_row_error input[type="password"] {
+    border-color: #f00;
+}
+
+.form_row_error .icon-font {
+    color: #eab6b6;
+}
+
+.v_code_holder {
+    vertical-align: top;
+}
+
+

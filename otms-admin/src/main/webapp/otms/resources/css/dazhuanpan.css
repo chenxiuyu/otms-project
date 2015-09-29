@@ -1,0 +1,30 @@
+@charset "utf-8";
+/* CSS Document */
+
+.wrapper { overflow: hidden; /*background: url(../images/bg.jpg) repeat-x center top;*/ position:relative; }
+img { display: block; }
+
+/*.section_1 { height: 413px; }
+.section_2 { height: 543px; }*/
+
+.section .wrap { width: 1201px; margin: 0 auto; position: relative; }
+.section .wrap img { width: 100%; }
+.ljq { position: absolute; top: 137px; left: 144px; }
+.ljq li { float: left; margin-right: 18px; }
+div.lottery-star { width: 377px; height: 377px; position: absolute; top: 255px; left: 230px; outline: none }
+div.lottery-star #lotteryBtn { cursor: pointer; position: absolute; top: 0; left: 0; *left:-107px}
+.cls_container { color:#1fb7c4; width: 200px; font-size: 14px; height: 320px; overflow: hidden; position:absolute; top:445px; right:200px;}
+.cls_container ul { list-style-type: none; margin: 0; padding: 0; margin-left: 15px; }
+.cls_container ul li { height: 20px; line-height: 20px; width: 200px; display:inline-block; }
+.cls_container ul li .name { display:inline-block; width:80px; line-height: 20px; overflow:hidden; height: 20px; vertical-align:middle}
+.leftFloat { left: 50%;position: fixed;margin-left: 524px; z-index: 7; top: 50%; margin-top:-90px; overflow: hidden; height: 360px; width: 56px;}
+.leftFloat ul { overflow: hidden; }
+.leftFloat li {width:56px;height:64px; cursor: pointer; }
+.div_5660,.div_4239,.div_9713,.div_6998,.div_6035,.div_7960{background:url(../images/fefei.png) no-repeat 0 0;}
+.div_5660{background-position:9px 0;}
+.leftFloat li.curr1{background-position:-57px 0;}
+.div_9713{background-position:9px -69px;}
+.leftFloat li.curr2{background-position:-57px -69px;}
+.div_6035{background-position:9px -138px;}
+.leftFloat li.curr3{background-position:-57px -138px;}
+

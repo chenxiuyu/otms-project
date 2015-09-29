@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+
+    <!-- job -->
+    <bean id="otmsBaseJob" class="com.ehaier.shoppingmall.otms.job.OtmsBaseJob"></bean>
+
+    <bean id="methodInvokingJobDetail" class="org.springframework.scheduling.quartz.MethodInvokingJobDetailFactoryBean">
+        <property name="targetObject">
+            <ref bean="otmsBaseJob" />
+        </property>
+        <property name="targetMethod">
+            <value>execute</value>
+        </property>
+    </bean>
+
+
+    <!-- 配置触发器 -->
+    <bean id="cronTrigger"
+          class="org.springframework.scheduling.quartz.CronTriggerFactoryBean">
+        <property name="jobDetail" ref="methodInvokingJobDetail" />
+        <property name="startDelay" value="10000" />
+        <property name="cronExpression" value="*/5 * * * * ?" />
+
+    </bean>
+
+    <bean id="ramJobStore" class="org.quartz.simpl.RAMJobStore" scope="singleton"/>
+
+    <!-- quartz持久化存储  -->
+    <bean id="quartzScheduler"
+          class="org.springframework.scheduling.quartz.SchedulerFactoryBean">
+        <!--<property name="dataSource">-->
+            <!--<ref bean="quartz_dataSource"/>-->
+        <!--</property>-->
+        <property name="configLocation" value="classpath:config/quartz.properties"/>
+        <property name="applicationContextSchedulerContextKey"
+                  value="applicationContextKey"/>
+        <property name="autoStartup" value="true"/>
+
+        <property name="jobDetails">
+            <list><ref bean="methodInvokingJobDetail" /></list>
+        </property>
+        <property name="triggers">
+            <list><ref bean="cronTrigger" /></list>
+        </property>
+
+    </bean>
+
+
+
+
+    <!-- 数据源配置, 使用应用中的DBCP数据库连接池 -->
+    <bean id="quartz_dataSource" class="org.apache.commons.dbcp.BasicDataSource" destroy-method="close">
+        <!-- Connection Info -->
+        <property name="driverClassName" value="${jdbcDriver}"/>
+        <property name="url" value="${jdbcUrl}"/>
+        <property name="username" value="${jdbcUsername}"/>
+        <property name="password" value="${jdbcPassword}"/>
+
+        <!-- Connection Pooling Info -->
+        <property name="maxActive" value="5"/>
+        <property name="maxIdle" value="3"/>
+        <property name="defaultAutoCommit" value="false"/>
+        <property name="initialSize" value="2"/>
+        <!-- 连接Idle 30分钟后超时,每10分钟检查一次 -->
+        <property name="timeBetweenEvictionRunsMillis" value="600000"/>
+        <property name="minEvictableIdleTimeMillis" value="1800000"/>
+    </bean>
+
+</beans>

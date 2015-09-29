@@ -1,0 +1,160 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	   xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	   xmlns:context="http://www.springframework.org/schema/context"
+	   xmlns:mvc="http://www.springframework.org/schema/mvc"
+	   xsi:schemaLocation="http://www.springframework.org/schema/beans
+       http://www.springframework.org/schema/beans/spring-beans-3.1.xsd    
+       http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context-3.1.xsd
+
+
+           http://www.springframework.org/schema/mvc http://www.springframework.org/schema/mvc/spring-mvc-3.1.xsd"
+		>
+
+	<!-- 静态资源 -->
+	<mvc:resources location="/otms/" mapping="/otms/resources/**"></mvc:resources>
+
+	<bean class="org.springframework.web.servlet.mvc.annotation.AnnotationMethodHandlerAdapter">
+		<property name="messageConverters">
+			<list>
+				<ref bean="mappingJacksonHttpMessageConverter"/>
+			</list>
+		</property>
+	</bean>
+	<bean class="org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter">
+		<property name="messageConverters">
+			<list>
+				<ref bean="mappingJacksonHttpMessageConverter"/>
+			</list>
+		</property>
+	</bean>
+	<mvc:annotation-driven></mvc:annotation-driven>
+	<bean id="mappingJacksonHttpMessageConverter" class="org.springframework.http.converter.json.MappingJackson2HttpMessageConverter" >
+		<property name="supportedMediaTypes">
+			<list>
+				<bean class="org.springframework.http.MediaType">
+					<constructor-arg index="0" value="application"/>
+					<constructor-arg index="1" value="json"/>
+					<constructor-arg index="2" value="UTF-8"/>
+				</bean>
+			</list>
+		</property>
+		<property name="objectMapper">
+			<bean class="com.fasterxml.jackson.databind.ObjectMapper">
+				<property name="dateFormat">
+					<bean class="java.text.SimpleDateFormat">
+						<constructor-arg type="java.lang.String" value="yyyy-MM-dd HH:mm:ss"></constructor-arg>
+					</bean>
+				</property>	
+			</bean>
+		</property>
+	</bean>
+	
+    <context:component-scan base-package="com.neusoft.otms" >
+		<context:include-filter type="annotation" expression="org.springframework.stereotype.Controller" /> 
+  	</context:component-scan> 
+  	
+  	<bean class="org.springframework.web.servlet.view.ContentNegotiatingViewResolver" id="viewResolver">
+		<property name="ignoreAcceptHeader" value="true"></property>
+		<property name="mediaTypes">
+			<map>
+				<entry key="json" value="application/json"></entry>
+				<entry key="xml" value="application/xml"></entry>
+			</map>
+		</property>
+		<property name="defaultContentType" value="text/html"></property>
+		<property name="favorParameter" value="false"></property>
+		<property name="viewResolvers">
+			<list>
+				<bean
+					class="org.springframework.web.servlet.view.freemarker.FreeMarkerViewResolver">
+					<property name="order" value="1"></property>
+					<property name="contentType" value="text/html;charset=UTF-8"></property>
+					<property name="cache" value="true"></property>
+					<property name="prefix" value=""></property>
+					<property name="suffix" value=".ftl"></property>
+					<property name="requestContextAttribute" value="request"/>
+					<property name="exposeRequestAttributes" value="true"></property>
+					<property name="exposeSessionAttributes" value="true"></property>
+					<property name="exposeSpringMacroHelpers" value="true"></property>
+					<property name="attributesMap" ref="freemarkerStaticModels"></property>
+				</bean>
+			</list>
+		</property>
+	</bean>
+	<bean id="freemarkerStaticModelsProps" class="org.springframework.beans.factory.config.PropertiesFactoryBean">
+    	<property name="location" value="classpath:freemarkerStatic.properties" />
+    </bean>
+    <bean id="freemarkerStaticModels" class="com.ehaier.shoppingmall.otms.web.freemarker.FreemarkerStaticModels" factory-method="getInstance" >
+    	<property name="staticModels" ref="freemarkerStaticModelsProps" />
+    </bean>
+    <bean id="fmXmlEscape" class="freemarker.template.utility.XmlEscape" />
+	<!-- freemarkerConfig配置-->
+    <!--项目需要自行html转义 所以使用默认spring提供的config org.springframework.web.servlet.view.freemarker.FreeMarkerConfigurer 若然为了防止防止跨站脚本攻击则使用com.neusoft.lottery.web.freemarker.CustomFreeMarkerConfigurer转义也可使用freemarker默认标签处理，也可对现有系统做相应请求处理防止其攻击-->
+	<bean id="freemarkerConfig" class="org.springframework.web.servlet.view.freemarker.FreeMarkerConfigurer">
+		<property name="defaultEncoding" value="utf-8"></property>
+		<property name="templateLoaderPath" value="/WEB-INF/views/"></property>
+		<property name="freemarkerVariables">
+			<map>
+				<entry key="xml_escape" value-ref="fmXmlEscape" />
+                <entry key="activeDomain" value="${links.console.domain.active}"></entry>
+				<!-- 
+				<entry key="codeManager" value-ref="codeManager" /> 
+				<entry key="baseDomain" value="${pom.baseurl.domain}"></entry>
+				<entry key="tuanBaseDomain" value="${pom.tuan.baseurl.domain}"></entry>
+				<entry key="phpBaseDomain" value="${pom.php.baseurl.domain}"></entry>
+				<entry key="jsBaseDomain" value="${pom.js.baseurl.domain}"></entry>
+				<entry key="imgBaseDomain" value="${pom.img.baseurl.domain}"></entry>
+				<entry key="cssBaseDomain" value="${pom.css.baseurl.domain}"></entry>
+				<entry key="productImgServerBaseDomain" value="${pom.productImgServer.baseurl.domain}"></entry>
+				<entry key="imgServerBaseDomain" value="${pom.imgServer.baseurl.domain}"></entry>
+				<entry key="ehaierBaseDomain" value="${pom.ehaier.baseurl.domain}"></entry>
+				<entry key="ehaierImgBaseDomain" value="${pom.ehaier.img.baseurl.domain}"></entry>
+				<entry key="imgServerDomain" value="${pom.imgServer.domain}"></entry>
+				-->
+			</map>
+		</property>
+		<property name="freemarkerSettings">
+			<props>
+				<prop key="template_update_delay">1</prop>
+				<prop key="defaultEncoding">UTF-8</prop>
+				<prop key="url_escaping_charset">UTF-8</prop>
+				<prop key="locale">zh_CN</prop>
+				<prop key="boolean_format">true,false</prop>
+				<prop key="datetime_format">yyyy-MM-dd HH:mm:ss</prop>
+				<prop key="date_format">yyyy-MM-dd</prop>
+				<prop key="time_format">HH:mm:ss</prop>
+				<prop key="number_format">0.######</prop>
+				<prop key="whitespace_stripping">true</prop>
+			</props>
+		</property>
+	</bean>
+	<mvc:default-servlet-handler />
+
+    <!--file upload-->
+    <bean id="multipartResolver" class="org.springframework.web.multipart.commons.CommonsMultipartResolver">
+        <property name="defaultEncoding" value="utf-8"></property>
+        <property name="maxUploadSize" value="10485760000"></property>
+        <property name="maxInMemorySize" value="40960"></property>
+    </bean>
+
+    <bean id="domainUrlUtil" class="com.ehaier.shoppingmall.otms.web.webutil.DomainUrlUtil">
+		<property name="EASYUI_BASEURL_DOMAIN" value="${links.console.domain.easyui}" />
+		<property name="BASEURL_DOMAIN" value="${links.console.domain}" />
+		<property name="JS_BASEURL_DOMAIN" value="${links.console.domain.js}" />
+		<property name="CSS_BASEURL_DOMAIN" value="${links.console.domain.css}" />
+         <property name="IMG_BASEURL_DOMAIN" value="${links.console.domain.image}" />
+		<!--<property name="TUAN_BASEURL_DOMAIN" value="${pom.tuan.baseurl.domain}" />
+        <property name="PRODUCT_IMG_SERVER_BASEURL_DOMAIN" value="${pom.productImgServer.baseurl.domain}" />
+        <property name="ALBUM_IMG_SERVER_BASEURL_DOMAIN" value="${pom.albumImgServer.baseurl.domain}" />
+        <property name="PHP_BASEURL_DOMAIN" value="${pom.php.baseurl.domain}" />
+        <property name="EHAIER_BASE_DOMAIN" value="${pom.ehaier.baseurl.domain}" />
+        <property name="EHAIER_IMG_BASE_DOMAIN" value="${pom.ehaier.img.baseurl.domain}" />
+        <property name="EHAIER_SEARCH_URL_DOMAIN" value="${pom.ehaier.searchurl.domain}" />
+        <property name="CDN_DOMAIN" value="${pom.cdn.domain}" />
+        <property name="BDF_CLIENT_ID" value="${pom.bfd.client.id}" />
+        <property name="MEMBER_DOMAIN" value="${pom.member.base.url}" /> -->
+	</bean>
+
+
+</beans>

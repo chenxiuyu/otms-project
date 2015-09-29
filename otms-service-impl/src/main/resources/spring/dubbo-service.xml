@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:dubbo="http://code.alibabatech.com/schema/dubbo"
+       xmlns:util="http://www.springframework.org/schema/util"
+       xmlns:context="http://www.springframework.org/schema/context"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+        http://www.springframework.org/schema/beans/spring-beans.xsd
+        http://code.alibabatech.com/schema/dubbo
+        http://code.alibabatech.com/schema/dubbo/dubbo.xsd
+        http://www.springframework.org/schema/util
+        http://www.springframework.org/schema/util/spring-util.xsd http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context.xsd">
+
+    <util:properties id="app" location="classpath:spring/dubbo.properties"/>
+    <!--<import resource="classpath*:spring-memcached.xml" />-->
+
+    <context:component-scan base-package="com.neusoft.otms"/>
+
+
+    <dubbo:application name="#{app.dubbo.application.name}" />
+    <dubbo:provider threadpool="cached" loadbalance="roundrobin" cluster="failfast" delay="-1" />
+    <dubbo:protocol name="dubbo" port="#{app.dubboPort}" />
+    <dubbo:registry protocol="#{app.dubboProtocol}" address="#{app.dubboRegistry}" file="#{app.dubbo.application.name}"/>
+
+    <!-- 声明需要暴露的服务接口 -->
+
+
+    <!--doubbo consumer -->
+
+</beans>

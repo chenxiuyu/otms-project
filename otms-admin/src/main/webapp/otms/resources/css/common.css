@@ -1,0 +1,24 @@
+body,h1,h2,h3,h4,h5,h6,p,blockquote,pre,code,del,dfn,em,img,strong,dd,dl,dt,li,ol,ul,fieldset,form,label,button,input,table,caption,tbody,tfoot,thead,tr,th,td,menu{margin:0;padding:0;}
+article,aside,details,figcaption,figure,footer,header,hgroup,nav,section{display:block}
+audio,canvas,video{display:inline-block;*display:inline;*zoom:1}
+audio:not([controls]){display:none}
+table{border-collapse:collapse;border-spacing:0;empty-cells:show}
+ol,ul,menu{list-style:none}
+img{border:0}
+a:focus{outline:none}
+em,i{font-style: normal;}
+button,input,select,textarea{font-size:100%;margin:0;vertical-align:-3px;outline:none;}
+button,input{border:1px solid;outline:none;line-height:normal;*overflow:visible}
+button::-moz-focus-inner,input::-moz-focus-inner{border:0;padding:0}
+button,input[type="button"],input[type="reset"],input[type="submit"]{cursor:pointer;-webkit-appearance:button}
+input[type="search"]{-webkit-appearance:textfield;-webkit-box-sizing:content-box;-moz-box-sizing:content-box;box-sizing:content-box}
+input[type="search"]::-webkit-search-decoration{-webkit-appearance:none}
+textarea{overflow:auto;vertical-align:top}
+::selection{background:#72d0eb;color:#fff;text-shadow:none}
+::-moz-selection{background:#72d0eb;color:#fff;text-shadow:none}
+*[hidden]{display:none}
+a{color:#0088DB;text-decoration:none;cursor:pointer}
+a:hover{color:#2A5E8E}
+.clearfix:after,.central:after,.widget ul:after,.paging:after,.pagenav:after,.base-tit:after{content:".";display:block;height:0;clear:both;visibility:hidden}
+.clearfix,.central,.widget ul,.paging,.pagenav,.base-tit{*+height:1%;}
+body,button,input,select,textarea,code{font-size:12px;font-family:microsoft yahei;color: #444;}

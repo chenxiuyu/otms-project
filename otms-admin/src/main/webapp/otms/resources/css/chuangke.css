@@ -1,0 +1,68 @@
+@charset "utf-8";
+/* base yui reset.css, repair 20091217*/
+html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, acronym, address, big, cite, code, del, dfn, em, font, ins, kbd, q, s, samp, small, strike, strong, sub, sup, tt, var, b, u, i, center, dl, dt, dd, ol, ul, li, fieldset, form, label, legend {margin:0;padding:0;border:0;word-wrap:break-word;word-break:break-all;}
+table, caption, tbody, tfoot, thead, tr, th, td {margin:0;padding:0;}
+table {border-collapse:collapse;}
+address, caption, cite, code, dfn, strong, th, var {font-style:normal;}
+h1, h2, h4, h5, h6 {font-size:1em;}
+input, textarea, select {font-family:inherit;font-weight:inherit;font-size:1em;padding:0;outline:none;}
+ul, ol {list-style:none;}
+em {font-style:normal;}
+html {background:#001c3c;}
+body {font-size:0.75em;color:#606060;font-family:"微软雅黑", Verdana, Tahoma, Arial, Helvetica, "宋体", sans-serif;word-wrap:break-word;word-break:break-all;}
+a {color:#606060;text-decoration:none;}
+a:hover {color:#005aa9;}
+a img, img {border-width:0px;}
+.clearfix:after {visibility:hidden;display:block;font-size:0;content:" ";clear:both;height:0;}
+.clearfix {*zoom:1;lear:both;}
+.txt_red{color:#FF0000;}
+/* reset end */
+/*validate*/
+.em-errMes{color:#fff;background: url(../images/mind.png) no-repeat ;padding-left: 28px; display: inline-block;}
+.li-qsheet .em-errMes{display: block;}
+
+.wrapper{width: 1000px;margin: 0 auto; background: url(../images/chuangke1_03.png) no-repeat 146px 55px; padding-bottom: 100px;}
+.activewrapper{width: 1000px;margin: 0 auto; background: none; padding-bottom: 100px;}
+.h2-chuangkelogo{margin: 107px auto 0; width: 154px; height:92px;}
+
+/*placeholder*/
+::-webkit-input-placeholder  {color:#9e9e9e;}
+input:-moz-placeholder,textarea:-moz-placeholder {color:#9e9e9e;}
+.placeholder {color:#9e9e9e;}
+
+/*header*/
+.h1-site{padding-top: 18px;}
+
+/*mainwrapper*/
+.mainwrapper{background: #FFF;clear: both;padding-top: 45px;border: 1px #dcdcdc solid;padding-bottom: 50px;}
+.inputbox{width:305px;height:46px;border:#b5b5b5 1px solid;padding-left:15px;margin-bottom: 11px;*line-height: 46px;}
+.h2-welcome{color:#666;font-size: 23px;font-weight: lighter;margin-left: 550px;}
+.a-findpw{float: right;}
+.li-checklogin{width: 320px;}
+.valiform{margin:65px 0 109px 340px;}
+.in-activebtn{width:126px;height:29px;background: #005aa9;display: inline-block;color: #fff;font-size: 15px; font-weight:bold;border:none;border-radius: 3px;margin:0 0 0 200px;cursor: pointer;}
+.li-otherlogin{margin-top: 40px;padding-top: 19px;border-top: 1px #dcdcdc solid;width: 322px;position: relative;}
+.a-alilogin{position: absolute;left:105px;}
+.inner-main{position: relative;}
+.centerwarning{background: none repeat scroll 0 0 #00528b;color: #fff;left: 340px;padding: 5px 20px;position: absolute;top: 110px;}
+/*page2*/
+.li-qsheet .em-ques{display: none;}
+.ta-inputbox{width:548px;height: 94px;margin:5px 0;padding:5px;}
+.li-qsheet{color:#FFF;margin-bottom: 40px;}
+.li-qsheet h3{font-size: 18px;font-weight: normal;}
+.valiform-qsheet{margin:65px 0 119px 230px;}
+.in-loginsub{width:126px;height:29px;background: #005aa9;display: inline-block;color: #fff;font-size: 15px; font-weight:bold;border:none;border-radius: 3px;margin: 33px 0 0 99px;cursor: pointer;}
+.img-wx2w{display: none;}
+.a-qcode-over .img-wx2w {display:block;position: absolute;top: 280px;left: 230px;}
+.qcodebox{position: relative;}
+a.a-qcode{color:#FFF;}
+a.a-qcode:hover{color:#FFF;}
+/*page3*/
+.p-actived{text-align: center;color: #FFF;background: url(../images/chuangkep_03.png) no-repeat 335px 43px; height:363px;height:133px;}
+a.a-actived{width:153px;height:31px;background: #005aa9;display: inline-block;font-size: 12px; border-radius: 3px;margin:0 0 100px 426px;color: #FFF;text-align: center;line-height: 31px;}
+/*footer*/
+.p-footer{color:#3b5c83;text-align: center;}
+.p-footer-trans{color:#17304e;text-align: center;}
+.p-footer a{color:#3b5c83;}
+.p-footer a:hover{color:#3b5c83;}
+

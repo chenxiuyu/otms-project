@@ -1,0 +1,281 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta http-equiv="Content-Language" content="zh-CN" />
+<meta content="all" name="robots" />
+<meta name="author" content="" /> 
+<meta name="Copyright" content="" />
+<meta name="keywords" content="" />
+<meta name="description" content="" /> 
+<link rel="icon" href="/favicon.ico" type="image/x-icon" />
+<title>表单页</title>
+<link rel="stylesheet" type="text/css" href="themes/default/easyui.css">
+<link rel="stylesheet" type="text/css" href="themes/icon.css">
+<link type="text/css" rel="stylesheet" media="all" href="css/style.css" />
+<script type="text/javascript" src="js/jquery-1.8.0.min.js"></script>
+<script type="text/javascript" src="js/jquery.easyui.min.js"></script>
+<script type="text/javascript" src="js/func.js"></script>
+
+</head>
+<body>
+<div class="wrapper">
+
+<!-- 流式布局 p1-p12，将页面宽度分为12份， 如p4+p4+p4三等分页面，p6+p6二等分页面，p6+p3+p3 将宽度分3块，前50%，后2块25%  -->
+<!-- 示例
+		<div class="fluidbox">
+			<div class="p4"></div>
+			<div class="p4"></div>
+			<div class="p4"></div>
+		</div>
+-->
+
+	<div class="formbox-a">
+		<h2 class="h2-title">产品信息</h2>
+		<div class="form-contbox">
+			<dl class="dl-group">
+				<dt class="dt-group"><span class="s-icon"></span>用户信息</dt>
+				<dd class="dd-group">
+
+					<div class="fluidbox">
+						<p class="p6 p-item"><label class="lab-item"><b class="red">*</b>角色名称</label><input type="text" class="txt w200" name="txt_1" /></p>
+						<p class="p6 p-item"><label class="lab-item">状态：</label>
+							<select class="drop" name="drop_1">
+							<option value="0" selected="selected">有效</option>
+							<option value="1">禁用</option>
+							</select>
+						</p>
+					</div>
+
+					<div class="fluidbox">
+						<label class="lab-item">备注：</label><input type="text" class="txt w400" name="txt_1" />
+				</dd>
+			</dl>
+
+
+			<dl class="dl-group">
+				<dt class="dt-group"><span class="s-icon"></span>商品信息</dt>
+				<dd class="dd-group">
+					<div class="fluidbox">
+						<p class="p6 p-item"><label class="lab-item">购买产品的名称：</label><input type="text" class="txt w200" name="txt_1" /></p>
+						<p class="p6 p-item"><label class="lab-item">用 户 数：</label><input type="text" class="txt" name="txt_2" /></p>
+					</div>
+					<div class="fluidbox">
+						<p class="p6 p-item"><label class="lab-item">图片选择：</label><input type="text" class="txt txtGallery" name="txt_1" /></p>
+						<p class="p6 p-item"><label class="lab-item">图片选择：</label><input type="text" class="txt" name="txt_2" /></p>
+					</div>
+					<div class="fluidbox">
+						<p class="p6 p-item"><label class="lab-item">版本语言种类：</label>
+							<select class="drop" name="drop_1">
+							<option value="0" selected="selected">请选择...</option>
+							<option value="1">中文</option>
+							<option value="2">English</option>
+							</select>
+						</p>
+						<p class="p6 p-item"><label class="lab-item">是否升级版：</label><input type="radio" class="rad" name="rad_1" />是 <input type="radio" class="rad" name="rad_1" />否 </p>
+					</div>
+
+					<div class="fluidbox">
+						<p class="p-item">
+							<label class="lab-item">其他需求：</label>
+							<input type="checkbox" class="chk" name="chk_1" />需求1 <input type="checkbox" class="chk" name="chk_2" />需求2
+						</p>
+					</div>
+
+					<div class="fluidbox"><label class="lab-item">功能应用：</label><textarea class="txta w400" name="txta"></textarea></div>
+					<div class="fluidbox"><label class="lab-item">软件界面应用：</label><textarea class="txta w400" name="txta"></textarea></div>
+
+				</dd>
+			</dl>
+
+			<p class="p-item p-btn">
+			<input type="submit" class="btn" name="btnsubmit" value="确 定" />
+			<input type="reset" class="btn btn-cancel" name="btn_reset"  value="重 置" />
+			</p>
+		</div>
+	</div>
+
+</div>
+
+
+<!-- galleryPop -->
+
+
+
+
+
+
+
+
+
+
+
+
+<input type="hidden" id="currUserId" name="currUserId" value="15"/>
+<input type="hidden" id="currUserEmail" name="currUserEmail" value="shoppingmalladmin@ehaier.com"/>
+<script type="text/javascript">
+var ehaier = {};
+ehaier.domainurl={
+	baseDomain:'http://console.ehaier.test/shoppingmall/',
+	phpBaseDomain:'http://www.testehaier.com/',
+	tuanDomain:'http://tuan.testehaier.com/',
+	imgServer:'',
+	productImgServer:'http://statics.testehaier.com/product/',
+	//产品图片服务可用后使用 productImgServerBaseDomain+recommendProduct.defaultImageFileId+'_'+width+'_'+height+'.jpg'
+	ehaierBaseDomain:'http://www.ehaier.test/',
+	imageServerAddr:'http://imageapps.ehaier.test/'
+}
+
+var userInfo = {
+	id : $('#currUserId').val(),
+	email : $('#currUserEmail').val()
+}
+
+</script>
+
+
+
+<script type="text/javascript">
+	openGalleryGroup();
+
+	function openGalleryGroup(img_show_prefix, isMulti) {
+		var that = this;
+		var curInput=null;
+		var userId = userInfo.id,userEmail = userInfo.email;
+		//userEmail = 'shoppingmalladmin@ehaier.com';
+		var ajaxFileUrl = ehaier.domainurl.imageServerAddr+'getCateListJson.html?uid='+userEmail+'&pi=';
+		var ajaxPicUrl = ehaier.domainurl.imageServerAddr+'getImageAppsListJson.html?uid='+userEmail;
+
+		var sgalleryPop = "<div id='galleryPop' class='easyui-dialog' data-options='title:\"选择图片\",iconCls:\"icon-save\",modal:true,closed:true' style='width:580px;height:435px;'><ul class='ul-op-gallery'></ul><p class='p-page'></p></div>";
+		$('body').append(sgalleryPop);
+
+		var ajaxPicPageUrl = null;
+		var sGallery = $('<span class="s-gallerySel"></span>');
+		var $galleryPage = $('#galleryPop .p-page');
+
+		$('.txtGallery').after(sGallery);
+
+		$('.s-gallerySel').click(function () {
+			curInput = $(this).siblings('.txtGallery');
+			if(img_show_prefix != undefined){
+				curImgShow = img_show_prefix;
+				if(isMulti){
+					curImgShow += curInput.attr("id").substr(curInput.attr("id").length-1);
+				} 
+			}
+			$('#galleryPop').window('open');
+			getFileList(ajaxFileUrl,1);
+		});
+
+		function getFileList(ajaxUrl,page) {
+			$.ajax({//请求文件夹列表
+				url:ajaxUrl+page,
+				type:"GET",dataType: "jsonp",jsonp: "jsonpCallback",
+				success:function ( fileData ) {
+					if (fileData.success) {//文件列表有数据
+						var data = fileData.data;
+						var fileHtml = '',pageHtml = '',filePage = data.pc*1,nowPage = data.pi*1;
+						var pageHtmlBox = '<span class="s-total"> 共<em class="em-total"></em>条记录</span><span class="s-page"></span>';//分页html
+						$galleryPage.empty().append(pageHtmlBox);//插入分页
+						$.each(data.imageCateList,function () {//文件夹列表
+							fileHtml += '<li class="li-file"><a class="a-file" href="'+ajaxPicUrl+'&cid='+this.imageCategory.cateId+'">'+this.imageCategory.cateName+'<span class="s-num">('+this.cateImageCount+')</span></a></li>';
+						});
+						$('.ul-op-gallery').html(fileHtml);
+						for (i = 1; i <= filePage; i++) {//增加页码
+							if (i == nowPage) {
+								pageHtml += '<a class="a-page a-pageNow" href="'+i+'">'+i+'</a>';
+							}else {
+								pageHtml += '<a class="a-page" href="'+i+'">'+i+'</a>';
+							}
+						}
+						$('#galleryPop .s-page').html(pageHtml);
+						$('#galleryPop .em-total').text(fileData.totalCount);
+
+						$('#galleryPop .a-page').click(function () {//页码点击事件
+							$galleryPage.empty();
+							var p = $(this).attr('href');
+							getFileList(ajaxUrl,p);
+							return false;
+						});
+
+						$('.a-file').click(function () {//文件夹点击事件
+							$galleryPage.empty();
+							var ajaxPicUrl = $(this).attr('href');
+							ajaxPicPageUrl = ajaxPicUrl;
+							getGalleryList(ajaxPicPageUrl,ajaxUrl,nowPage);
+							return false;
+						});
+					}else {//返回失败(无数据，或地址请求错误)
+						$('.ul-op-gallery').html(fileData.message);
+					};
+				}
+			});
+		}
+
+
+		function getGalleryList(ajaxUrl,ajaxFileUrl,nowPage) {
+			$.ajax({
+				url:ajaxUrl,
+				type:"GET",dataType: "jsonp",jsonp: "jsonpCallback",
+				success:function ( data ) {
+					if (data.success) {
+						var imgData = data.data;
+						var liHtml = '',pageHtml = '',galleryPage = imgData.pc*1;
+						var pageHtmlBox ='<a class="a-backFile" href="'+ajaxFileUrl+'">&lt;&lt;返回专辑</a><span class="s-total"> 共<em class="em-total"></em>条记录</span><span class="s-page"></span>';//分页html
+						$galleryPage.empty().append(pageHtmlBox);
+						$.each(imgData.imageAppsList,function () {//遍历显示图片
+							liHtml += '<li class="li-img"><a class="a-img" href="#"><img src="'+this.imageUrl+'" alt="" /></a><span class="s-imgSize">'+this.imageWidth+'*'+this.imageHeight+'</span></li>';
+						});
+						$('.ul-op-gallery').html(liHtml);
+						$('.ul-op-gallery img').click(function () {//绑定图片点击事件
+							curInput.val($(this).attr('src')).focus();
+							$('#galleryPop').window('close');
+							$galleryPage.empty();
+							return false;
+						});
+						for (i = 1; i <= galleryPage; i++) {//增加页码
+							if (i== imgData.pi*1) {
+								pageHtml += '<a class="a-page a-pageNow" href="'+ajaxPicPageUrl+'&pi='+i+'">'+i+'</a>';
+							}else {
+								pageHtml += '<a class="a-page" href="'+ajaxPicPageUrl+'&pi='+i+'">'+i+'</a>';
+							}
+						}
+
+						$('#galleryPop .s-page').html(pageHtml);
+						$('#galleryPop .em-total').text(data.totalCount);
+						$('#galleryPop .a-backFile').click(function () {
+							$galleryPage.empty();
+							var ajaxUrl = $(this).attr('href');
+							getFileList(ajaxUrl,nowPage);
+							return false;
+						});
+						$('#galleryPop .a-page').click(function () {//页码点击事件
+							$galleryPage.empty();
+							var ajaxUrl = $(this).attr('href');
+							getGalleryList(ajaxUrl,ajaxFileUrl,nowPage);
+							return false;
+						});
+					}else {//返回失败(无数据，或地址请求错误)
+						$('.ul-op-gallery').html(data.message);
+						var pageHtmlBox ='<a class="a-backFile" href="'+ajaxFileUrl+'">&lt;&lt;返回专辑</a>';
+						$galleryPage.empty().append(pageHtmlBox);
+						$('#galleryPop .a-backFile').click(function () {
+							$galleryPage.empty();
+							var ajaxUrl = $(this).attr('href');
+							getFileList(ajaxUrl,nowPage);
+							return false;
+						});
+					};
+				}
+			});
+		}
+
+	}
+
+
+</script>
+
+
+
+</body>
+</html>
