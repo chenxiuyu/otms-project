@@ -2,7 +2,7 @@
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
     <parent>
         <artifactId>otms</artifactId>
-        <groupId>com.neusoft.otms</groupId>
+        <groupId>com.ehaier.shoppingmall.otms</groupId>
         <version>1.0-SNAPSHOT</version>
     </parent>
 
@@ -19,7 +19,7 @@
 
         <!-- 开发模式下打开-->
         <dependency>
-            <groupId>com.neusoft.otms</groupId>
+            <groupId>com.ehaier.shoppingmall.otms</groupId>
             <artifactId>otms-service-impl</artifactId>
             <version>1.0-SNAPSHOT</version>
         </dependency>
@@ -184,6 +184,12 @@
         <dependency>
             <groupId>org.quartz-scheduler</groupId>
             <artifactId>quartz-jobs</artifactId>
+        </dependency>
+
+        <dependency>
+            <groupId>org.apache.geronimo.specs</groupId>
+            <artifactId>geronimo-jta_1.1_spec</artifactId>
+            <version>1.1.1</version>
         </dependency>
 
         <dependency>

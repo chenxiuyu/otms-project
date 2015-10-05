@@ -12,4 +12,8 @@
 	<dubbo:reference id="systemService" interface="com.haier.cbs.system.service.SystemService" timeout="10000"/>
 
 
+    <bean name="cookieDomain" class="java.lang.String">
+        <constructor-arg value="${cookie.domain}" />
+    </bean>
+
 </beans>

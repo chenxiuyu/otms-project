@@ -5,7 +5,7 @@
 
 
     <!-- job -->
-    <bean id="otmsBaseJob" class="com.ehaier.shoppingmall.otms.job.OtmsBaseJob"></bean>
+   <!-- <bean id="otmsBaseJob" class="com.ehaier.shoppingmall.otms.job.OtmsBaseJob"></bean>
 
     <bean id="methodInvokingJobDetail" class="org.springframework.scheduling.quartz.MethodInvokingJobDetailFactoryBean">
         <property name="targetObject">
@@ -14,23 +14,20 @@
         <property name="targetMethod">
             <value>execute</value>
         </property>
-    </bean>
+    </bean>-->
 
 
     <!-- 配置触发器 -->
-    <bean id="cronTrigger"
+   <!-- <bean id="cronTrigger"
           class="org.springframework.scheduling.quartz.CronTriggerFactoryBean">
         <property name="jobDetail" ref="methodInvokingJobDetail" />
         <property name="startDelay" value="10000" />
         <property name="cronExpression" value="*/5 * * * * ?" />
 
-    </bean>
-
-    <bean id="ramJobStore" class="org.quartz.simpl.RAMJobStore" scope="singleton"/>
+    </bean>-->
 
     <!-- quartz持久化存储  -->
-    <bean id="quartzScheduler"
-          class="org.springframework.scheduling.quartz.SchedulerFactoryBean">
+    <bean id="stdScheduler" class="org.springframework.scheduling.quartz.SchedulerFactoryBean" lazy-init="false">
         <!--<property name="dataSource">-->
             <!--<ref bean="quartz_dataSource"/>-->
         <!--</property>-->
@@ -38,17 +35,7 @@
         <property name="applicationContextSchedulerContextKey"
                   value="applicationContextKey"/>
         <property name="autoStartup" value="true"/>
-
-        <property name="jobDetails">
-            <list><ref bean="methodInvokingJobDetail" /></list>
-        </property>
-        <property name="triggers">
-            <list><ref bean="cronTrigger" /></list>
-        </property>
-
     </bean>
-
-
 
 
     <!-- 数据源配置, 使用应用中的DBCP数据库连接池 -->

@@ -16,7 +16,7 @@
 		<property name="locations">
 			<list>
 				<value>classpath:config/conf.properties</value>
-				<value>classpath:config/quartz.properties</value>
+				<!--<value>classpath:config/quartz.properties</value>-->
 			</list>
 		</property>
 	</bean>
@@ -27,11 +27,11 @@
     <!--</bean>-->
 
 	<!-- spring 开启定时job-->
-	<task:annotation-driven scheduler="qbScheduler"/>
-	<task:scheduler id="qbScheduler" pool-size="10"/>
+	<!--<task:annotation-driven scheduler="qbScheduler"/>
+	<task:scheduler id="qbScheduler" pool-size="10"/>-->
 	<!-- spring 开启定时job-->
 
-    <context:component-scan base-package="com.neusoft.otms">
+    <context:component-scan base-package="com.ehaier.shoppingmall.otms">
 		<context:exclude-filter type="annotation" expression="org.springframework.stereotype.Controller"/>
 		<context:exclude-filter type="regex" expression="com.ehaier.shoppingmall.core.cache.memcache.*"/>
 	</context:component-scan>
