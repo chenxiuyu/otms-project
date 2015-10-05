@@ -1,6 +1,9 @@
 package com.ehaier.shoppingmall.otms.job;
 
 import com.ehaier.shoppingmall.otms.job.framework.ClusterJob;
+import com.ehaier.shoppingmall.otms.job.utils.MyApplicationContextUtils;
+import com.ehaier.shoppingmall.otms.model.SaUser;
+import com.ehaier.shoppingmall.otms.service.UserService;
 import com.google.common.base.Stopwatch;
 import com.haier.cbs.system.entity.SysMenu;
 import com.haier.cbs.system.service.SystemService;
@@ -17,6 +20,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Lazy;
 import org.springframework.stereotype.Component;
 
+import java.io.Serializable;
 import java.util.List;
 import java.util.concurrent.TimeUnit;
 
@@ -25,24 +29,23 @@ import java.util.concurrent.TimeUnit;
  */
 @Slf4j
 @Component
-@Lazy(false)
-public class GetDataFromEhaierJob extends ClusterJob implements Job {
+public class GetDataFromEhaierJob extends ClusterJob implements Job,Serializable {
     private static final DateTimeFormatter DFT = DateTimeFormat.forPattern("yyyy-MM-dd HH:mm:ss");
-    @Autowired
-    private SystemService systemService;
 
     @Override
     public void execute(JobExecutionContext jobExecutionContext) throws JobExecutionException {
-        if(!isLeader()){//每个job调用的时候必须先调用该方法，否则导致多个节点同时执行的情况发生
-            return;
+        if(!isLeader()){
+//            return;
         }
         log.info("start to execute commentSummary job ");
         Stopwatch stopwatch = Stopwatch.createStarted();
 
         try {
             log.info("GetDataFromEhaierJob running ..........");
-            ServiceResult<List<SysMenu>> serviceResult = systemService.findMenuTree();
-            log.info(JsonUtil.toJson(serviceResult.getResult()));
+            UserService userService = MyApplicationContextUtils.getBean("userServiceImpl");
+            SaUser saUser = userService.getUserById(1);
+            log.info("所有加载到spring的bean：" + JsonUtil.toJson(MyApplicationContextUtils.getBeanNames()));
+            log.info(JsonUtil.toJson(saUser));
             log.info("GetDataFromEhaierJob ending ..........");
         } catch (Exception e) {
             e.printStackTrace();

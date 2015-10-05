@@ -31,13 +31,15 @@ public class QuartzUtil {
     public static void addJob(String jobName, String jobGroupName,
                               String triggerName, String triggerGroupName, Job job, String cronExpression)
             throws SchedulerException, ParseException {
-        JobDetail jobDetail = newJob(job.getClass()).withIdentity(jobName, jobGroupName).storeDurably().build();//任务名，任务组，任务执行类
-//        CronTrigger trigger = newTrigger().withIdentity(triggerName, triggerGroupName).withSchedule(cronSchedule(cronExpression)).build();//触发器名,触发器组,cron表达式
-//        stdScheduler.scheduleJob(jobDetail, trigger);
-//        stdScheduler.addJob(jobDetail,false);
-        JobStoreTX jobStoreTX = new JobStoreTX();
-        jobStoreTX.storeJob(jobDetail,true);
-        stdScheduler.getSchedulerName();
+        JobDetail jobDetail = newJob(job.getClass()).storeDurably(true).withIdentity(jobName, jobGroupName).build();//任务名，任务组，任务执行类
+        CronTrigger trigger = newTrigger().withIdentity(triggerName, triggerGroupName).withSchedule(cronSchedule(cronExpression)).build();//触发器名,触发器组,cron表达式
+        if(stdScheduler.checkExists(jobDetail.getKey())){
+            removeJob(jobName, jobGroupName,triggerName, triggerGroupName);
+        }
+        stdScheduler.scheduleJob(jobDetail, trigger);
+        if(stdScheduler.isShutdown()){
+            stdScheduler.start();
+        }
         log.info(jobName + " 已加入到调度中心！");
     }
 
@@ -52,13 +54,12 @@ public class QuartzUtil {
      */
     public static void modifyJobTime(String triggerName, String triggerGroupName,
                                      String cronExpression) throws SchedulerException, ParseException {
-        Trigger trigger = (Trigger) newTrigger().withIdentity(triggerName, triggerGroupName);
+        CronTrigger trigger = (CronTrigger) stdScheduler.getTrigger(TriggerKey.triggerKey(triggerName,triggerGroupName));
         if (trigger != null) {
-            CronTrigger ct = (CronTrigger) trigger;
             //修改时间
-            ct.getTriggerBuilder().withSchedule(cronSchedule(cronExpression)).build();
+            trigger.getTriggerBuilder().withSchedule(cronSchedule(cronExpression)).build();
             //重启触发器
-            stdScheduler.resumeTrigger(new TriggerKey(triggerName, triggerGroupName));
+            stdScheduler.resumeTrigger(trigger.getKey());
         }
     }
 
