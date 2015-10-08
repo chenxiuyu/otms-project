@@ -1,9 +1,8 @@
-package com.ehaier.shoppingmall.otms.job.utils;
+package com.ehaier.shoppingmall.otms.utils;
 
 import lombok.extern.slf4j.Slf4j;
 import org.quartz.*;
 import org.quartz.impl.StdScheduler;
-import org.quartz.impl.jdbcjobstore.JobStoreTX;
 
 import java.text.ParseException;
 

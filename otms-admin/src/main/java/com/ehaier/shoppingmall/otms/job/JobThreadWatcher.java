@@ -1,8 +1,7 @@
 package com.ehaier.shoppingmall.otms.job;
 
-import com.ehaier.shoppingmall.otms.job.utils.MyApplicationContextUtils;
+import com.ehaier.shoppingmall.otms.utils.MyApplicationContextUtils;
 import lombok.extern.slf4j.Slf4j;
-import org.quartz.Scheduler;
 import org.quartz.impl.StdScheduler;
 
 import javax.servlet.ServletConfig;

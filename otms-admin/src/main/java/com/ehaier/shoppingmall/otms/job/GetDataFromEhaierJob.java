@@ -1,13 +1,10 @@
 package com.ehaier.shoppingmall.otms.job;
 
 import com.ehaier.shoppingmall.otms.job.framework.ClusterJob;
-import com.ehaier.shoppingmall.otms.job.utils.MyApplicationContextUtils;
+import com.ehaier.shoppingmall.otms.utils.MyApplicationContextUtils;
 import com.ehaier.shoppingmall.otms.model.SaUser;
 import com.ehaier.shoppingmall.otms.service.UserService;
 import com.google.common.base.Stopwatch;
-import com.haier.cbs.system.entity.SysMenu;
-import com.haier.cbs.system.service.SystemService;
-import com.haier.common.ServiceResult;
 import com.haier.common.util.JsonUtil;
 import lombok.extern.slf4j.Slf4j;
 import org.joda.time.DateTime;
@@ -16,12 +13,9 @@ import org.joda.time.format.DateTimeFormatter;
 import org.quartz.Job;
 import org.quartz.JobExecutionContext;
 import org.quartz.JobExecutionException;
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.context.annotation.Lazy;
 import org.springframework.stereotype.Component;
 
 import java.io.Serializable;
-import java.util.List;
 import java.util.concurrent.TimeUnit;
 
 /**

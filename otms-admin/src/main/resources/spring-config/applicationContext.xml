@@ -36,7 +36,7 @@
 		<context:exclude-filter type="regex" expression="com.ehaier.shoppingmall.core.cache.memcache.*"/>
 	</context:component-scan>
 
-	<bean class="com.ehaier.shoppingmall.otms.job.utils.MyApplicationContextUtils" lazy-init="false"></bean>
+	<bean class="com.ehaier.shoppingmall.otms.utils.MyApplicationContextUtils" lazy-init="false"></bean>
 
 
 	<!-- <import resource="../mongo-config.xml" />-->

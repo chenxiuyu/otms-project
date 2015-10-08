@@ -1,4 +1,4 @@
-package com.ehaier.shoppingmall.otms.job.utils;
+package com.ehaier.shoppingmall.otms.utils;
 
 import org.apache.log4j.Logger;
 import org.springframework.context.ApplicationContext;

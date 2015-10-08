@@ -1,8 +1,7 @@
 package com.ehaier.shoppingmall.otms.controller;
 
-import com.ehaier.shoppingmall.otms.job.GetDataFromEhaierJob;
-import com.ehaier.shoppingmall.otms.job.utils.MyApplicationContextUtils;
-import com.ehaier.shoppingmall.otms.job.utils.QuartzUtil;
+import com.ehaier.shoppingmall.otms.utils.MyApplicationContextUtils;
+import com.ehaier.shoppingmall.otms.utils.QuartzUtil;
 import com.ehaier.shoppingmall.otms.model.SaJobs;
 import com.ehaier.shoppingmall.otms.model.SaUser;
 import com.ehaier.shoppingmall.otms.service.UserService;
@@ -16,7 +15,6 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
 
-import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import java.util.Map;
 

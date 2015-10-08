@@ -2,7 +2,7 @@ package controller;
 
 import base.TestBaseController;
 import com.ehaier.shoppingmall.otms.job.GetDataFromEhaierJob;
-import com.ehaier.shoppingmall.otms.job.utils.QuartzUtil;
+import com.ehaier.shoppingmall.otms.utils.QuartzUtil;
 import lombok.extern.slf4j.Slf4j;
 import org.junit.Test;
 
