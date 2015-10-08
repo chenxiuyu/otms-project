@@ -18,14 +18,19 @@ public class TestMain {
     private static final DateTimeFormatter DFT = DateTimeFormat.forPattern("yyyy-MM-dd HH:mm:ss");
 
     public static void  main(String [] ars){
-        String json="{\"status\":0,\"message\":\"ok\",\"type\":2}";
-        Stopwatch stopwatch = Stopwatch.createStarted();
+//        String json="{\"status\":0,\"message\":\"ok\",\"type\":2}";
+//        Stopwatch stopwatch = Stopwatch.createStarted();
+//
+//        JSONObject msg = (JSONObject) JSON.parse(json);
+//        System.out.println(msg);
+//
+//        stopwatch.stop();
+//        log.info("[MARK-commentSummary-FINISHED] end at {}, cost {}", DFT.print(DateTime.now()), stopwatch.elapsed(TimeUnit.SECONDS));
 
-        JSONObject msg = (JSONObject) JSON.parse(json);
-        System.out.println(msg);
 
-        stopwatch.stop();
-        log.info("[MARK-commentSummary-FINISHED] end at {}, cost {}", DFT.print(DateTime.now()), stopwatch.elapsed(TimeUnit.SECONDS));
+        Double thread_count = Math.ceil(234 / 100.0);
+        log.info(thread_count + "");
+        log.info(thread_count.intValue() + "");
     }
 }
 
